@@ -14,9 +14,11 @@ android:
     - addon-google_apis-google-19
     - sys-img-armeabi-v7a-android-21
 
+    
 before_install:
   - yes | sdkmanager "platforms;android-26"
 
+  
 deploy:
   provider: releases
   api_key: $GITHUB_KEY
@@ -25,6 +27,7 @@ deploy:
   on:
     tags: true
 
+    
 notifications:
   email:
     recipients:
