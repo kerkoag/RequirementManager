@@ -24,7 +24,7 @@ script: ./gradlew :app:build
 deploy:
   provider: releases
   api_key: $GITHUB_KEY
-  file: app-mvp-dagger/build/outputs/apk/app-mvp-dagger-release.apk
+  file: app/build/outputs/apk/app-release.apk
   skip_cleanup: true
   on:
     tags: true
