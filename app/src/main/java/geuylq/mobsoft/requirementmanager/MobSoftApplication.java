@@ -5,6 +5,7 @@ import android.app.Application;
 import javax.inject.Inject;
 
 import geuylq.mobsoft.requirementmanager.repository.Repository;
+import geuylq.mobsoft.requirementmanager.ui.UIModule;
 
 public class MobSoftApplication extends Application {
     @Inject
