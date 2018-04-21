@@ -22,12 +22,12 @@ public class MemoryRepository implements Repository {
 
     @Override
     public Requirement getRequirement(int id) {
-        return null;
+        return requirements.get(0);
     }
 
     @Override
     public List<Requirement> getRequirements() {
-        return null;
+        return requirements;
     }
 
     @Override
