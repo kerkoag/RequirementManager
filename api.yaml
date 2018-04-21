@@ -1,0 +1,153 @@
+swagger: '2.0'
+info:
+  title: Requirement Manager,
+  description: Backend API for Requirement Manager service.
+  version: "1.0.0"
+
+schemes:
+  - http
+
+basePath: /api
+
+produces:
+  - application/json
+
+paths:
+  /requirements:
+    get:
+      summary: Get all requirements
+      description: |
+        Returns all the requirements available in the system.
+      tags:
+        - Requirements
+      responses:
+        304:
+          description: No changes
+        200:
+          description: An array of requirements
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Requirement'
+        500:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+  /requirements/{id}:
+    get:
+      summary: Get one requirement
+      description: |
+      parameters:
+        - name: id
+          in: path
+          description: Id.
+          required: true
+          type: number
+          format: integer
+      tags:
+        - Requirements
+      responses:
+        200:
+          description: Details.
+          schema:
+            $ref: '#/definitions/Requirement'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create or update requirement
+      description: |
+      parameters:
+        - name: id
+          in: path
+          description: Id.
+          required: true
+          type: number
+          format: integer
+        - name: requirement
+          in: body
+          description: The requirement
+          required: true
+          schema:
+              $ref: '#/definitions/Requirement'
+      tags:
+        - Requirements
+      responses:
+        200:
+          description: Detailed food intofmation
+          schema:
+            $ref: '#/definitions/Requirement'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    delete:
+      summary: Delete requirement
+      description: |
+      parameters:
+        - name: id
+          in: path
+          description: Id.
+          required: true
+          type: number
+          format: integer
+      tags:
+        - Requirements
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Requirement'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+
+definitions:
+  Requirement:
+    type: object
+    properties:
+      id:
+        type: number
+        description: Id.
+      title:
+        type: string
+        description: Name of the plant.
+      priority:
+        type: integer
+        format: int32
+      status:
+        type: string
+        description: Status.
+      state:
+        type: string
+        description: State.
+      assignedTo:
+        type: string
+        description: Assigned To.
+      recordedDate:
+        type: object
+        description: Recorded date.
+      description:
+        type: string
+        description: Description.
+  Account:
+    type: object
+    properties:
+      userName:
+        type: string
+        description: Username.
+      email:
+        type: string
+        description: Email.
+
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
