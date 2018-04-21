@@ -6,6 +6,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import de.greenrobot.event.EventBus;
 import geuylq.mobsoft.requirementmanager.ui.main.MainPresenter;
 import geuylq.mobsoft.requirementmanager.ui.requirementdetails.RequirementDetailsPresenter;
 import geuylq.mobsoft.requirementmanager.ui.requirementlist.RequirementListPresenter;
@@ -47,6 +48,12 @@ public class UIModule {
     @Singleton
     public SynchronizationPresenter provideSynchronizationPresenter() {
         return new SynchronizationPresenter();
+    }
+
+    @Provides
+    @Singleton
+    public EventBus provideEventBus() {
+        return EventBus.getDefault();
     }
 
 }

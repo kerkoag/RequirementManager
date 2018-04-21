@@ -6,6 +6,7 @@ import dagger.Component;
 import geuylq.mobsoft.requirementmanager.interactor.AccountInteractor;
 import geuylq.mobsoft.requirementmanager.interactor.InteractorModule;
 import geuylq.mobsoft.requirementmanager.interactor.RequirementInteractor;
+import geuylq.mobsoft.requirementmanager.network.NetworkModule;
 import geuylq.mobsoft.requirementmanager.repository.RepositoryModule;
 import geuylq.mobsoft.requirementmanager.ui.UIModule;
 import geuylq.mobsoft.requirementmanager.ui.main.MainActivity;
@@ -14,7 +15,7 @@ import geuylq.mobsoft.requirementmanager.ui.requirementlist.RequirementListActiv
 import geuylq.mobsoft.requirementmanager.ui.synchronization.SynchronizationActivity;
 
 @Singleton
-@Component(modules = {UIModule.class, RepositoryModule.class, InteractorModule.class})
+@Component(modules = {UIModule.class, RepositoryModule.class, InteractorModule.class, NetworkModule.class})
 public interface MobSoftApplicationComponent {
     void inject(MobSoftApplication mobSoftApplication);
 

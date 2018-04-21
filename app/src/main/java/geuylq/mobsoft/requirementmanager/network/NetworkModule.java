@@ -33,7 +33,7 @@ public class NetworkModule {
 
     @Provides
     @Singleton
-    public RequirementsApi provideAllergenesApi(Retrofit retrofit) {
+    public RequirementsApi provideRequirementsApi(Retrofit retrofit) {
         return retrofit.create(RequirementsApi.class);
     }
 }
