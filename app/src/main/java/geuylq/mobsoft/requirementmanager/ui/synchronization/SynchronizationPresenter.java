@@ -2,6 +2,8 @@ package geuylq.mobsoft.requirementmanager.ui.synchronization;
 
 import geuylq.mobsoft.requirementmanager.ui.BasePresenter;
 
+import static geuylq.mobsoft.requirementmanager.MobSoftApplication.injector;
+
 public class SynchronizationPresenter extends BasePresenter<SynchronizationScreen> {
 
     public SynchronizationPresenter() {
@@ -10,7 +12,7 @@ public class SynchronizationPresenter extends BasePresenter<SynchronizationScree
     @Override
     public void attachScreen(SynchronizationScreen screen) {
         super.attachScreen(screen);
-        //injector.inject(this);
+        injector.inject(this);
     }
 
     @Override

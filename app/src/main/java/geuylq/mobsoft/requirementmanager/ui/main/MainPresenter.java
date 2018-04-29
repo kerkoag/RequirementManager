@@ -1,5 +1,6 @@
 package geuylq.mobsoft.requirementmanager.ui.main;
 
+import static geuylq.mobsoft.requirementmanager.MobSoftApplication.injector;
 import geuylq.mobsoft.requirementmanager.ui.BasePresenter;
 
 public class MainPresenter extends BasePresenter<MainScreen> {
@@ -10,7 +11,7 @@ public class MainPresenter extends BasePresenter<MainScreen> {
     @Override
     public void attachScreen(MainScreen screen) {
         super.attachScreen(screen);
-        //injector.inject(this);
+        injector.inject(this);
     }
 
     @Override

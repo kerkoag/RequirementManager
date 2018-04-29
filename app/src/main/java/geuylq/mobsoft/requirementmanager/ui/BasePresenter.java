@@ -1,6 +1,6 @@
 package geuylq.mobsoft.requirementmanager.ui;
 
-public class BasePresenter<S> {
+public abstract class BasePresenter<S> {
     protected S screen;
 
     public void attachScreen(S screen) {

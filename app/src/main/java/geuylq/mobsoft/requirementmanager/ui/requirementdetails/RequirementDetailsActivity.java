@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import javax.inject.Inject;
 
+import geuylq.mobsoft.requirementmanager.MobSoftApplication;
 import geuylq.mobsoft.requirementmanager.R;
 
 public class RequirementDetailsActivity extends AppCompatActivity implements RequirementDetailsScreen {
@@ -16,6 +17,7 @@ public class RequirementDetailsActivity extends AppCompatActivity implements Req
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        MobSoftApplication.injector.inject(this);
     }
 
     @Override

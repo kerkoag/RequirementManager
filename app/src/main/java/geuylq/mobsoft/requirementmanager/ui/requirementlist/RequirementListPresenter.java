@@ -2,6 +2,8 @@ package geuylq.mobsoft.requirementmanager.ui.requirementlist;
 
 import geuylq.mobsoft.requirementmanager.ui.BasePresenter;
 
+import static geuylq.mobsoft.requirementmanager.MobSoftApplication.injector;
+
 public class RequirementListPresenter extends BasePresenter<RequirementListScreen> {
 
     public RequirementListPresenter() {
@@ -10,7 +12,7 @@ public class RequirementListPresenter extends BasePresenter<RequirementListScree
     @Override
     public void attachScreen(RequirementListScreen screen) {
         super.attachScreen(screen);
-        //injector.inject(this);
+        injector.inject(this);
     }
 
     @Override
