@@ -11,6 +11,6 @@ public class RepositoryModule {
     @Provides
     public Repository provideRepository() {
 
-        return new SugarOrmRepository();
+        return new MemoryRepository();
     }
 }

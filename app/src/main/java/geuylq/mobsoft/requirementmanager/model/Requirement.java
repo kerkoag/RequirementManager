@@ -1,7 +1,10 @@
 package geuylq.mobsoft.requirementmanager.model;
 
+import com.orm.dsl.Table;
+
 import java.util.Date;
 
+@Table
 public class Requirement {
     private Long id;
 

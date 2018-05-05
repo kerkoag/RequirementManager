@@ -1,4 +1,4 @@
-package geuylq.mobsoft.requirementmanager.ui.requirementdetails;
+package geuylq.mobsoft.requirementmanager.ui.requirementlist;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
@@ -33,12 +33,11 @@ public class RequirementAdapter extends ArrayAdapter<Requirement> {
         Requirement f = getItem(position);
 
         if(f != null){
-            TextView name = (TextView) v.findViewById(R.id.requirement_details);
-            TextView details = (TextView) v.findViewById(R.id.requirement_date);
+            TextView title = (TextView) v.findViewById(R.id.requirement_title);
+            TextView state = (TextView) v.findViewById(R.id.requirement_state);
 
-            //name.setText(f.getName());
-            //details.setText(f.getDetails());
-            //price.setText(f.getPrice() + " Ft");
+            title.setText(f.getTitle());
+            state.setText(f.getState());
         }
 
         return v;

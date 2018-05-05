@@ -27,7 +27,7 @@ public class SugarOrmRepository implements Repository {
 
     @Override
     public List<Requirement> getRequirements() {
-        return SugarRecord.listAll(Requirement.class);
+         return SugarRecord.listAll(Requirement.class);
     }
 
     @Override
@@ -36,8 +36,8 @@ public class SugarOrmRepository implements Repository {
     }
 
     @Override
-    public void updateRequirement(List<Requirement> requirements) {
-        SugarRecord.saveInTx(requirements);
+    public void updateRequirement(Requirement requirement) {
+        SugarRecord.saveInTx(requirement);
     }
 
     @Override

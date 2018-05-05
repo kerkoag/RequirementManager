@@ -2,6 +2,10 @@ package geuylq.mobsoft.requirementmanager.mock.interceptors;
 
 import android.net.Uri;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import geuylq.mobsoft.requirementmanager.model.Requirement;
 import geuylq.mobsoft.requirementmanager.network.GsonHelper;
 import geuylq.mobsoft.requirementmanager.network.NetworkConfig;
 import geuylq.mobsoft.requirementmanager.repository.MemoryRepository;
@@ -20,6 +24,10 @@ public class RequirementMock {
         Headers headers = request.headers();
 
         MemoryRepository memoryRepository = new MemoryRepository();
+
+
+
+
 
         if (uri.getPath().equals(NetworkConfig.ENDPOINT_PREFIX + "requirements") && request.method().equals("GET")) {
             memoryRepository.open(null);

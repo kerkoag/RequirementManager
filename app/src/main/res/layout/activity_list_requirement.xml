@@ -8,7 +8,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/requirement_details"
+            android:id="@+id/requirement_title"
             android:layout_weight="70"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
 
         <TextView
             android:layout_weight="30"
-            android:id="@+id/requirement_date"
+            android:id="@+id/requirement_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ASd" />

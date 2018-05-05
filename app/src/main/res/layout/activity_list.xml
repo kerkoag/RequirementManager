@@ -10,7 +10,7 @@
     </ListView>
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/createButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="131dp"
         android:layout_height="wrap_content"

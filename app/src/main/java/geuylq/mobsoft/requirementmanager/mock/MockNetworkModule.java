@@ -51,4 +51,12 @@ public class MockNetworkModule {
     public RequirementsApi provideRequirementsApi(Retrofit retrofit) {
         return retrofit.create(RequirementsApi.class);
     }
+
+    /*
+    @Provides
+    @Singleton
+    public AccountApi provideAccountApi(Retrofit retrofit) {
+        return retrofit.create(AccountApi.class);
+    }
+    */
 }

@@ -11,9 +11,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="28dp"
         android:ems="10"
-        android:enabled="false"
         android:hint="Cím"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/priority"
@@ -23,9 +22,8 @@
         android:layout_below="@+id/title"
         android:layout_marginTop="11dp"
         android:ems="10"
-        android:enabled="false"
         android:hint="Prioritás"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/state"
@@ -34,9 +32,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/priority"
         android:ems="10"
-        android:enabled="false"
         android:hint="Állapot"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/recorded"
@@ -47,7 +44,7 @@
         android:layout_marginTop="156dp"
         android:ems="10"
         android:hint="Rögzítve"
-        android:inputType="number" />
+        android:inputType="date" />
 
     <EditText
         android:id="@+id/assingto"
@@ -58,7 +55,7 @@
         android:layout_marginTop="211dp"
         android:ems="10"
         android:hint="Hozzárendelt személy"
-        android:inputType="textMultiLine" />
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/description"

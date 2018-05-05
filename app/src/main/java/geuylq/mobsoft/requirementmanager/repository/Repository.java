@@ -16,7 +16,7 @@ public interface Repository {
 
     void createRequirement(Requirement requirement);
 
-    void updateRequirement(List<Requirement> requirements);
+    void updateRequirement(Requirement requirement);
 
     void removeRequirement(Requirement requirement);
 

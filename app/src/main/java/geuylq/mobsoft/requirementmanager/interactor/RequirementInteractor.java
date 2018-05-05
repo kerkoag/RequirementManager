@@ -8,7 +8,11 @@ import java.util.List;
 
 import de.greenrobot.event.EventBus;
 import geuylq.mobsoft.requirementmanager.MobSoftApplication;
+import geuylq.mobsoft.requirementmanager.interactor.events.CreateRequirementEvent;
+import geuylq.mobsoft.requirementmanager.interactor.events.DeleteRequirementEvent;
+import geuylq.mobsoft.requirementmanager.interactor.events.GetRequirementEvent;
 import geuylq.mobsoft.requirementmanager.interactor.events.GetRequirementsEvent;
+import geuylq.mobsoft.requirementmanager.interactor.events.UpdateRequirementEvent;
 import geuylq.mobsoft.requirementmanager.model.Requirement;
 import geuylq.mobsoft.requirementmanager.network.api.RequirementsApi;
 import geuylq.mobsoft.requirementmanager.repository.Repository;
@@ -35,6 +39,57 @@ public class RequirementInteractor {
         } catch (Exception e) {
             event.setThrowable(e);
         } finally {
+            bus.post(event);
+        }
+    }
+
+    public void getRequirement (Long id) {
+        GetRequirementEvent event = new GetRequirementEvent();
+        try {
+            Requirement requirement = repository.getRequirement((id.intValue()));
+            event.setRequirement(requirement);
+            bus.post(event);
+        }
+        catch (Exception e) {
+            event.setThrowable(e);
+            bus.post(event);
+        }
+    }
+
+    public void createRequirement (Requirement requirement) {
+        CreateRequirementEvent event = new CreateRequirementEvent();
+        try {
+            repository.createRequirement(requirement);
+            bus.post(event);
+        }
+        catch (Exception e) {
+            event.setThrowable(e);
+            bus.post(event);
+        }
+    }
+
+
+    public void updateRequirement (Requirement requirement) {
+        UpdateRequirementEvent event = new UpdateRequirementEvent();
+        try {
+            repository.updateRequirement(requirement);
+            bus.post(event);
+        }
+        catch (Exception e) {
+            event.setThrowable(e);
+            bus.post(event);
+        }
+    }
+
+    public void deleteRequirement (Long id) {
+        DeleteRequirementEvent event = new DeleteRequirementEvent();
+        try {
+            Requirement requirement = repository.getRequirement((id.intValue()));
+            repository.removeRequirement(requirement);
+            bus.post(event);
+        }
+        catch (Exception e) {
+            event.setThrowable(e);
             bus.post(event);
         }
     }
