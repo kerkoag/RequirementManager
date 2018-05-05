@@ -42,7 +42,16 @@ public class SugarOrmRepository implements Repository {
     @Override
     public void updateRequirement(Requirement requirement) {
 
-        SugarRecord.saveInTx(requirement);
+        Requirement old = getRequirement(requirement.getId().intValue());
+        old.setTitle(requirement.getTitle());
+        old.setStatus(requirement.getStatus());
+        old.setState(requirement.getState());
+        old.setPriority(requirement.getPriority());
+        old.setAssignedTo(requirement.getAssignedTo());
+        old.setRecordedDate(requirement.getRecordedDate());
+        old.setDescription(requirement.getDescription());
+
+        SugarRecord.saveInTx(old);
     }
 
     @Override

@@ -5,7 +5,7 @@ import com.orm.dsl.Table;
 
 import java.util.Date;
 
-@Table
+//@Table
 public class Requirement extends SugarRecord {
     private Long id;
 
