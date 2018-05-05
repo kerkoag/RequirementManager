@@ -12,11 +12,13 @@ import geuylq.mobsoft.requirementmanager.model.Requirement;
 public class SugarOrmRepository implements Repository {
     @Override
     public void open(Context context) {
+
         SugarContext.init(context);
     }
 
     @Override
     public void close() {
+
         SugarContext.terminate();
     }
 
@@ -27,16 +29,19 @@ public class SugarOrmRepository implements Repository {
 
     @Override
     public List<Requirement> getRequirements() {
-         return SugarRecord.listAll(Requirement.class);
+
+        return SugarRecord.listAll(Requirement.class);
     }
 
     @Override
     public void createRequirement(Requirement requirement) {
+
         SugarRecord.saveInTx(requirement);
     }
 
     @Override
     public void updateRequirement(Requirement requirement) {
+
         SugarRecord.saveInTx(requirement);
     }
 

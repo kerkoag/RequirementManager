@@ -1,11 +1,12 @@
 package geuylq.mobsoft.requirementmanager.model;
 
+import com.orm.SugarRecord;
 import com.orm.dsl.Table;
 
 import java.util.Date;
 
 @Table
-public class Requirement {
+public class Requirement extends SugarRecord {
     private Long id;
 
     private String title;

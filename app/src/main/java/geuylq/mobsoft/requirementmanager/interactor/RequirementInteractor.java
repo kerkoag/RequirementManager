@@ -27,7 +27,7 @@ public class RequirementInteractor {
 
     public RequirementInteractor() {
         MobSoftApplication.injector.inject(this);
-        repository.open(null);
+        //repository.open(null);
     }
 
     public void getRequirements() {

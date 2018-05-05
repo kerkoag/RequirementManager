@@ -14,6 +14,7 @@ public class AccountInteractor {
     EventBus bus;
 
     public AccountInteractor() {
+
         MobSoftApplication.injector.inject(this);
     }
 
