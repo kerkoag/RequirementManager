@@ -1,22 +1,26 @@
 package geuylq.mobsoft.requirementmanager.model;
 
+import com.orm.dsl.Table;
+
+@Table
 public class Account {
-    private Long id = null;
-    private String name;
-
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public Long getId() {
-        return id;
+    private String userName = null;
+
+    public String getPassword() {
+        return password;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPassword(String password) {
+        this.password = password;
     }
+
+    private String password = null;
 }

@@ -15,8 +15,17 @@ public class Account   {
   @SerializedName("userName")
   private String userName = null;
   
-  @SerializedName("email")
-  private String email = null;
+  @SerializedName("password")
+  private String password = null;
+
+  public Account() {
+
+  }
+
+  public Account(String userName, String password) {
+    this.userName = userName;
+    this.password = password;
+  }
   
 
   
@@ -35,12 +44,12 @@ public class Account   {
   /**
    * Email.
    **/
-  @ApiModelProperty(value = "Email.")
-  public String getEmail() {
-    return email;
+  @ApiModelProperty(value = "Password.")
+  public String getPassword() {
+    return password;
   }
-  public void setEmail(String email) {
-    this.email = email;
+  public void setPassword(String password) {
+    this.password = password;
   }
 
   
@@ -55,12 +64,12 @@ public class Account   {
     }
     Account account = (Account) o;
     return Objects.equals(userName, account.userName) &&
-        Objects.equals(email, account.email);
+        Objects.equals(password, account.password);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userName, email);
+    return Objects.hash(userName, password);
   }
 
   @Override
@@ -69,7 +78,7 @@ public class Account   {
     sb.append("class Account {\n");
     
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("}");
     return sb.toString();
   }

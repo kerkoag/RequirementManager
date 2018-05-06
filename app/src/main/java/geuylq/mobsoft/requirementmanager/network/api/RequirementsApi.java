@@ -1,6 +1,7 @@
 package geuylq.mobsoft.requirementmanager.network.api;
 
 
+import geuylq.mobsoft.requirementmanager.network.model.Account;
 import retrofit2.Call;
 import retrofit2.http.*;
 
@@ -16,6 +17,17 @@ import java.util.List;
 import java.util.Map;
 
 public interface RequirementsApi {
+
+  /**
+   *
+   * Login validation.
+   * @param account
+   * @return Call<Boolean>
+   */
+  @POST("login")
+  Call<Void> login(
+          @Body Account account
+  );
   
   /**
    * Get all requirements

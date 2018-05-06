@@ -7,6 +7,7 @@ import com.orm.SugarRecord;
 
 import java.util.List;
 
+import geuylq.mobsoft.requirementmanager.model.Account;
 import geuylq.mobsoft.requirementmanager.model.Requirement;
 
 public class SugarOrmRepository implements Repository {
@@ -23,7 +24,20 @@ public class SugarOrmRepository implements Repository {
     }
 
     @Override
+    public Boolean login(String username, String password) {
+        // TODO: Mock regisztráció
+        List<geuylq.mobsoft.requirementmanager.model.Account> accounts = SugarRecord.listAll(geuylq.mobsoft.requirementmanager.model.Account.class);
+        for(Account account : accounts) {
+            if("admin" == username && "admin" == password)
+                return true;
+        }
+
+        return false;
+    }
+
+    @Override
     public Requirement getRequirement(int id) {
+
         return SugarRecord.findById(Requirement.class,id);
     }
 

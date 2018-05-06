@@ -27,7 +27,7 @@ public class MockInterceptor implements Interceptor {
         Headers headers = request.headers();
 
 
-        if (uri.getPath().startsWith(NetworkConfig.ENDPOINT_PREFIX + "requirements")) {
+        if (uri.getPath().startsWith(NetworkConfig.ENDPOINT_PREFIX)) {
             return RequirementMock.process(request);
         }
 

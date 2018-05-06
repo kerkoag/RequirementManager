@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import javax.inject.Inject;
 
@@ -22,11 +23,13 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button fab =  findViewById(R.id.loginButton);
-        fab.setOnClickListener(new View.OnClickListener() {
+        Button loginButton =  findViewById(R.id.loginButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToRequirements();
+                String username = ((EditText)findViewById(R.id.loginName)).getText().toString();
+                String password = ((EditText)findViewById(R.id.loginPassword)).getText().toString();
+                mainPresenter.login(username, password);
             }
         });
 

@@ -4,13 +4,16 @@ import android.content.Context;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import geuylq.mobsoft.requirementmanager.model.Requirement;
+import geuylq.mobsoft.requirementmanager.network.model.Account;
 
 public class MemoryRepository implements Repository {
 
     List<Requirement> requirements;
+    List<Account> accounts;
 
     private static long NEXT_ID = 100;
 
@@ -41,11 +44,27 @@ public class MemoryRepository implements Repository {
             requirements.add(req1);
             requirements.add(req2);
         }
+
+        if(accounts == null){
+            accounts = new ArrayList<>(Arrays.asList(
+                    new Account("admin", "admin")
+            ));
+        }
     }
 
     @Override
     public void close() {
 
+    }
+
+    @Override
+    public Boolean login(String username, String password) {
+        for(Account account : accounts) {
+            if(account.getUserName().equals(username) && account.getPassword().equals(password))
+                return true;
+        }
+
+        return false;
     }
 
     @Override

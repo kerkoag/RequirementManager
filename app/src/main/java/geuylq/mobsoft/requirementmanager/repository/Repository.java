@@ -10,6 +10,8 @@ public interface Repository {
 
     void close();
 
+    Boolean login(String username, String password);
+
     Requirement getRequirement(int id);
 
     List<Requirement> getRequirements();
